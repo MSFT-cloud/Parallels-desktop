@@ -1,0 +1,33 @@
+{
+  "project": "InjectShell",
+  "Author": "Hicham94460",
+  "Version": 1,
+  "Description": {
+    "desc": "This is a document that explains the use of the json object. basePublicConfig If a configuration with the same name is configured with the same Key in the AppList, the value in the AppList is used in preference to the value in the AppList.",
+    "bridgeFile": "Intermediate path between app path and injected file path, some apps can only inject to /Contents, so this is added.",
+    "packageName": "app package name, used to confirm that the app exists.",
+    "injectFile": "Path to the relative app path of the injected file",
+    "supportVersion": "Supported version numbers for major version numbers If no arbitrary version number is provided then inject directly and unconditionally",
+    "supportSubVersion": "More precise subversion numbers, for some apps that have the bad habit of keeping the major version number the same but often changing the minor version number.",
+    "extraShell": "Extra execution shells, such as PD18 need to execute some extra shells, support customization.",
+    "needCopyToAppDir": "Some apps need to be copied to the app directory to run when the SIP is opened This attribute controls the copying of library files to the Framework",
+    "deepSignApp": "Automatically signing the entire app",
+    "disableLibraryValidate": "Turn off library authentication. Enable it only for pd for now.",
+    "entitlements": "Used to skip some permissions On SIP-enabled macOS such as ARM64",
+    "noSignTarget": "By default, the target file will be signed after injection, we sometimes don't need this behavior.",
+    "noDeep": "--deep hold"
+  },
+  "basePublicConfig": {
+    "bridgeFile": "/Contents/Frameworks/"
+  },
+  "AppList": [
+      {
+      "packageName": "com.parallels.desktop.console",
+      "bridgeFile": "/Contents/MacOS/Parallels Service.app/Contents/MacOS/",
+      "injectFile": "prl_disp_service",
+      "extraShell": "pd.sh",
+      "noDeep": true,
+      "supportSubVersion": ["53606", "53488", "53614", "53621", "54570"]
+    }
+  ]
+}
