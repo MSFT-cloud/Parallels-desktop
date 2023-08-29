@@ -61,7 +61,7 @@ def main
 
   puts "====\tAuto-Injection Script Begins Execution ====\n"
   puts "====\tAutomatic Inject Script Checking... ====\n"
-  puts "== Design By QiuChenly#github.com/qiuchenly"
+  puts "== By #github.com/Hicham94460"
   puts "Enter 'y' when prompted or press enter to skip this item.\n"
   puts "When i find useful options, pls follow my prompts enter 'y' or press enter key to jump that item.\n"
 
